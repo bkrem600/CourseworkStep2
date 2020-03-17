@@ -7,7 +7,7 @@ public class Project {
 	private String startDate;
 	private String endDate;
 	
-	ArrayList<TeamMember> teamMembers = new ArrayList<TeamMember>();
+	ArrayList<TeamMember> teamMembers = new ArrayList<>();
 	
 	public Project (String title, String startDate, String endDate) {
 		this.title = title;
@@ -17,12 +17,6 @@ public class Project {
 	
 	public void addTeamMember (TeamMember teamMember) {
 		this.teamMembers.add(teamMember);
-		System.out.println(teamMember.getName() + " added");
-	}
-	
-	public void findAndDisplay (String s) {
-		TeamMember teamMember = findTeamMember(s);
-		System.out.println(teamMember!=null?(teamMember.toString()):teamMember + " not found");
 	}
 	
 	public TeamMember findTeamMember (String s) {
@@ -33,12 +27,10 @@ public class Project {
 		return null;
 	}
 	
-	public boolean removeTeamMember (TeamMember teamMember) {
+	public Boolean removeTeamMember (TeamMember teamMember) {
 		if (this.teamMembers.remove(teamMember)) {
-			System.out.println(teamMember.getName() + " remove");
 			return true;
 		} else {
-			System.out.println(teamMember.getName() + " not found");
 			return false;
 		}
 	}
@@ -79,5 +71,14 @@ public class Project {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
+	
+	public ArrayList<TeamMember> getTeamMembers() {
+		return teamMembers;
+	}
+	
+	public void setTeamMembers (ArrayList<TeamMember> teamMembers) {
+		this.teamMembers = teamMembers;
+	}
+	
 
 }
