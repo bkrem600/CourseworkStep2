@@ -12,7 +12,7 @@ public class TeamMember {
 	}
 
 	public String toString() {
-		return name + " (" + number + " " + division + ")";
+		return name + " (" + number + ", " + division + ")";
 	}
 
 	public String getName() {

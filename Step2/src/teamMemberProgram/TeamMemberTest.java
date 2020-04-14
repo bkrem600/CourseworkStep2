@@ -33,29 +33,33 @@ public class TeamMemberTest {
 				case 1:
 					memberName = Input.getString("Team member name: ");
 					if (teamMembers.findTeamMember(memberName) == null) {
-						memberNumber = Input.getInteger("Team member employee number: ");
-						memberDivision = Input.getString("Team member division: ");
-						teamMembers.addTeamMember(new TeamMember(memberName, memberNumber, memberDivision));
-						System.out.println("The team member " + memberName + " has been added");
+						try {
+							memberNumber = Input.getInteger("Team member employee number: ");
+							memberDivision = Input.getString("Team member division: ");
+							teamMembers.addTeamMember(new TeamMember(memberName, memberNumber, memberDivision));
+							System.out.println("The team member " + '"' + memberName + '"' + " has been added");
+						} catch (Exception exception) {
+							System.out.println("Invalid value entered");
+						}
 					} else {
-						System.out.println("The team member " + memberName + " already exists");
+						System.out.println("The team member " + '"' + memberName + '"' + " already exists");
 					}
 					break;
 				case 2:
 					memberName = Input.getString("Team member name: ");
 					if (teamMembers.removeTeamMember(teamMembers.findTeamMember(memberName))) {
 						System.out.println("The team member " + memberName + " has been removed");
+						System.out.println("The team member " + '"' + memberName + '"' + " has been removed");
 					} else {
-						System.out.println("The team member " + memberName + " could not be found");
+						System.out.println("The team member " + '"' + memberName + '"' + " could not be found");
 					}
 					break;
 				case 3:
 					memberName = Input.getString("Team member name: ");
 					if (teamMembers.findTeamMember(memberName) == null) {
-						System.out.println("The team member " + memberName + " could not be found");
+						System.out.println("The team member " + '"' + memberName + '"' + " could not be found");
 					} else {
-						System.out.println("The team member " + memberName + " has been found");
-						System.out.print("MEMBER DETAILS\n");
+						System.out.println("The team member " + '"' + memberName + '"' + " has been found");
 						System.out.println(teamMembers.findTeamMember(memberName));
 					}
 					break;
@@ -63,7 +67,7 @@ public class TeamMemberTest {
 					teamMembers.displayTeamMembers();
 					break;
 				default:
-					System.out.println("Please enter valid option from the menu");
+					System.out.println("Please enter a valid option from the menu");
 			}
 		}
 	}

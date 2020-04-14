@@ -33,7 +33,6 @@ public class Project {
 		if (teamMembers.isEmpty()) {
 			System.out.println("Team members list is empty");
 		} else {
-			System.out.print("MEMBER DETAILS\n");
 			for (TeamMember teamMember: teamMembers) {
 				System.out.println(teamMember.toString());
 			}
