@@ -15,7 +15,7 @@ public class TeamMemberTest {
 							"2) Remove team member\n" +
 							"3) Find team member\n" +
 							"4) Display all team members\n" +
-							"9) Quit\n" +
+							"0) Quit\n" +
 							"Option: ");
 					break;
 				} catch (Exception e) {
