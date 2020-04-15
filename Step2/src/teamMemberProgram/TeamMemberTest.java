@@ -48,7 +48,6 @@ public class TeamMemberTest {
 				case 2:
 					memberName = Input.getString("Team member name: ");
 					if (teamMembers.removeTeamMember(teamMembers.findTeamMember(memberName))) {
-						System.out.println("The team member " + memberName + " has been removed");
 						System.out.println("The team member " + '"' + memberName + '"' + " has been removed");
 					} else {
 						System.out.println("The team member " + '"' + memberName + '"' + " could not be found");
